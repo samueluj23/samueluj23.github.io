@@ -10,25 +10,27 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
 .nf{min-height:calc(100vh - 60px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:16px;position:relative}
 .nf::before{content:"";position:absolute;left:-10%;top:10%;width:640px;height:420px;background:radial-gradient(closest-side,rgba(139,92,246,.3),transparent);z-index:-1}
-.nf .code{font-weight:800;letter-spacing:-.04em;font-size:clamp(88px,16vw,180px);line-height:.9;color:var(--accent2)}
+.nf .code{font-weight:650;letter-spacing:-.05em;font-size:clamp(88px,16vw,180px);line-height:.9;max-width:none;background:linear-gradient(90deg,#c4b5fd,#a78bfa 45%,#e9d5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nf p{color:var(--muted);font-size:18px;max-width:40ch}
 </style>
 </head>
 <body>
 <header class="nav">
-  <a href="/" class="logo">SAM<span>.</span></a>
-  <a href="/#contact" class="pill">Say hello</a>
+  <div class="nav-in">
+    <a href="/" class="brand"><img src="/assets/favicon.svg" alt="" width="24" height="24"><span>Samuel James</span></a>
+    <a href="mailto:samueluj23@gmail.com" class="btn btn-sm btn-primary">Email me</a>
+  </div>
 </header>
 <main class="nf wrap">
-  <p class="eyebrow">Page not found</p>
+  <p class="kicker"><span class="dot" aria-hidden="true"></span>Page not found</p>
   <h1 class="code">404</h1>
   <p>This page doesn't exist or has moved. The work, results and contact details are all on the home page.</p>
-  <div class="cta"><a class="btn primary" href="/">Back to home</a><a class="btn ghost" href="/#work">See my work</a></div>
+  <div class="cta"><a class="btn btn-primary" href="/">Back to home</a><a class="btn btn-ghost" href="/#work">See my work</a></div>
 </main>
 </body>
 </html>
