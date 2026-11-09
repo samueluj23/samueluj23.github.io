@@ -1,4 +1,4 @@
-:root{--bg:#0b0a10;--ink:#f4f1ea;--muted:#a7a3b3;--accent:#8b5cf6;--accent2:#c4b5fd;--paper:#f6f4ef;--dark:#15131c;--line:rgba(255,255,255,.12)}
+:root{--bg:#0b0a10;--ink:#f4f1ea;--muted:#a7a3b3;--accent:#7c3aed;--accent-soft:#8b5cf6;--accent2:#c4b5fd;--paper:#f6f4ef;--dark:#15131c;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Geist,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -9,7 +9,7 @@ img{max-width:100%;display:block}
 /* nav */
 .nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;background:rgba(11,10,16,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .logo{font-weight:800;font-size:22px;letter-spacing:-.03em;text-decoration:none}
-.logo span{color:var(--accent)}
+.logo span{color:var(--accent-soft)}
 .nav nav{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:3px}
 .nav nav a{text-decoration:none;font-size:14px;padding:5px 13px;border-radius:999px;color:var(--muted)}
 .nav nav a:hover{color:var(--ink);background:rgba(255,255,255,.08)}
@@ -145,3 +145,13 @@ section{padding-top:56px}
 .results b{font-size:16px}
 @media (max-width:900px){.card.feature .results{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:600px){.results,.card.feature .results{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* accessibility */
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:6px}
+.card :focus-visible,.contact :focus-visible{outline-color:#16141c}
+.contact :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+/* pin stats + links to the bottom of each card so rows line up */
+.card-body .results{margin-top:auto}
+.card-body .links,.card-body .more{margin-top:0}
