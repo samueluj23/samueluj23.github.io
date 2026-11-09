@@ -5,7 +5,7 @@
   --radius:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:Geist,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-feature-settings:"ss01"}
 a{color:inherit}
 img{max-width:100%;display:block}
@@ -230,7 +230,6 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 .ident-name{font-size:18px;font-weight:600;letter-spacing:-.01em;color:var(--text)}
 .ident-role{font-size:18px;font-weight:600;letter-spacing:-.01em;padding-left:16px;border-left:1px solid var(--line2);
   background:linear-gradient(90deg,#c4b5fd,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ident-role-sm{display:inline-block;border:1px solid rgba(167,139,250,.35);border-radius:999px;padding:6px 14px;margin-bottom:18px;font-size:14px;background:rgba(124,58,237,.12);-webkit-background-clip:border-box;background-clip:border-box;color:#d8ccff}
 .cta{gap:10px}
 .cta-social{display:flex;gap:8px;margin-left:6px;padding-left:16px;border-left:1px solid var(--line)}
 .cta-links{display:none}
@@ -339,3 +338,8 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
   .logos ul{gap:6px}
   .logos li,.logos li:first-child{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px}
 }
+/* contact badge (standalone, no gradient-text inheritance) */
+.contact-card .badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;max-width:100%;white-space:nowrap;height:30px;padding:0 14px;margin:0 auto 18px;border-radius:999px;border:1px solid rgba(167,139,250,.4);background:rgba(124,58,237,.16);color:#e4dcff;font-size:13.5px;font-weight:600;line-height:1;letter-spacing:0;overflow:hidden;text-overflow:ellipsis}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#c4b5fd;flex:none}
+.chip{white-space:nowrap;max-width:100%}
+@media (max-width:720px){.contact-card .badge{font-size:13px;height:28px;padding:0 12px;margin-bottom:14px}}
