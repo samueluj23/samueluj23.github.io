@@ -427,3 +427,19 @@ html,body{overflow-x:clip}
   .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li{border-right:0!important;border-bottom:1px solid var(--line)!important}
   .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li:last-child{border-bottom:0!important}
 }
+/* Hero photo card: clear photo, caption strip below */
+@media (min-width:721px){
+  .hero-photo{display:flex;flex-direction:column;border-radius:20px;overflow:hidden}
+  .hero-photo img{aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center 40%;border-radius:0}
+  .hero-photo figcaption{position:static;left:auto;right:auto;bottom:auto;margin:0;padding:14px 16px;border:0;border-top:1px solid var(--line);border-radius:0;background:var(--surface);backdrop-filter:none;-webkit-backdrop-filter:none;gap:8px}
+  .hero-photo .fc-row{grid-template-columns:44px minmax(0,1fr)}
+}
+/* Hero photo: soft, blended look */
+@media (min-width:721px){
+  .hero-photo{position:relative}
+  .hero-photo img{filter:grayscale(1) blur(1.2px) brightness(.82) contrast(.88);transform:scale(1.03);transition:filter .4s ease,transform .4s ease}
+  .hero-photo::after{content:"";position:absolute;top:0;left:0;right:0;aspect-ratio:4/5;pointer-events:none;background:radial-gradient(120% 90% at 50% 38%,transparent 55%,rgba(9,9,11,.55) 100%),linear-gradient(180deg,transparent 62%,rgba(9,9,11,.35) 82%,var(--surface) 100%)}
+  .hero-photo figcaption{position:relative;z-index:1}
+  .hero-photo:hover img{filter:grayscale(1) blur(0) brightness(.9) contrast(.95)}
+}
+@media (prefers-reduced-motion:reduce){.hero-photo img{transition:none}}
