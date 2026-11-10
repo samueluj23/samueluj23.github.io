@@ -410,3 +410,20 @@ html,body{overflow-x:clip}
 .case-feature>.shots-row{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
 .shots.shots-row .shot img{width:100%;height:auto;max-height:none;aspect-ratio:4/3;object-fit:cover;object-position:top center}
 @media (max-width:720px){.case-feature>.shots-row{grid-template-columns:1fr}}
+/* Balance stat-only side panels (GameGPT, Zerion) */
+.case-feature .stats b{font-size:clamp(18px,1.7vw,22px)}
+.case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) b{white-space:nowrap}
+.case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li{padding:16px 18px}
+@media (min-width:961px){
+  .case-feature .case-side>.stats:only-child{flex:1;grid-auto-rows:1fr;align-content:stretch}
+  .case-feature .case-side>.stats:only-child li{display:flex;flex-direction:column;justify-content:center;padding:18px 20px}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child){grid-template-columns:1fr}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li{border-right:0;border-bottom:1px solid var(--line)}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li:last-child{border-bottom:0}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) b{font-size:clamp(22px,2vw,28px)}
+}
+@media (max-width:720px){
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child){grid-template-columns:1fr}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .case-feature .case-side>.stats:only-child:has(>li:nth-child(3):last-child) li:last-child{border-bottom:0!important}
+}
