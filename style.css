@@ -406,7 +406,7 @@ html,body{overflow-x:clip}
 .btn-sm .ic{width:16px;height:16px}
 @media (max-width:720px){.par>div{grid-template-columns:1fr}}
 .btn-secondary:hover svg{transform:none}
-/* Zerion: stacked shots (X Space, dinner recap, WL giveaway) */
-.shots.shots-stack{grid-template-columns:1fr;gap:16px}
-.shots.shots-stack .shot img{width:100%;height:auto;max-height:none;aspect-ratio:4/3;object-fit:cover;object-position:top center}
-@media (min-width:961px){.case-feature#zerion .case-main{position:sticky;top:88px;align-self:start}}
+/* Zerion: full-width shots row (X Space, dinner recap, WL giveaway) */
+.case-feature>.shots-row{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.shots.shots-row .shot img{width:100%;height:auto;max-height:none;aspect-ratio:4/3;object-fit:cover;object-position:top center}
+@media (max-width:720px){.case-feature>.shots-row{grid-template-columns:1fr}}
