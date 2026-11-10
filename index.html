@@ -342,6 +342,28 @@
   document.documentElement.classList.add('motion');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  // count-up for stat numbers (final text stays in the HTML)
+  var NUM=/\d[\d,]*(?:\.\d+)?/g;
+  function plan(el){var t=el.textContent,parts=[],last=0,m,any=false;NUM.lastIndex=0;
+    while((m=NUM.exec(t))){var raw=m[0],next=t.charAt(m.index+raw.length),plain=raw.replace(/,/g,''),v=parseFloat(plain);
+      var skip=next==='-'||(/^\d{4}$/.test(raw)&&v>1900&&v<2100);
+      parts.push(t.slice(last,m.index));
+      if(skip){parts.push(raw)}else{any=true;parts.push({v:v,d:(plain.split('.')[1]||'').length,c:raw.indexOf(',')>-1})}
+      last=m.index+raw.length}
+    parts.push(t.slice(last));return any?{t:t,p:parts}:null}
+  function fmt(n,o){var s=n.toFixed(o.d);if(o.c){var a=s.split('.');a[0]=a[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=a.join('.')}return s}
+  function run(el,pl){var h=el.offsetHeight,t0=null,D=1100;el.style.minHeight=h+'px';
+    function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/D),e=1-Math.pow(1-k,3);
+      el.textContent=pl.p.map(function(x){return typeof x==='string'?x:fmt(k<1?x.v*e:x.v,x)}).join('');
+      if(k<1)requestAnimationFrame(f);else{el.textContent=pl.t;el.style.minHeight=''}}
+    requestAnimationFrame(f)}
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){co.unobserve(e.target);var pl=plan(e.target);if(pl)run(e.target,pl)}})},{threshold:.5});
+  document.querySelectorAll('.kpi b,.minor b,.case .stats b').forEach(function(el){co.observe(el)});
+  // seamless logo marquee
+  var lu=document.querySelector('.logos ul');
+  if(lu){var tr=document.createElement('div');tr.className='logos-track';var vp=document.createElement('div');vp.className='logos-viewport';
+    lu.parentNode.insertBefore(vp,lu);vp.appendChild(tr);tr.appendChild(lu);var cl=lu.cloneNode(true);cl.setAttribute('aria-hidden','true');tr.appendChild(cl);
+    document.documentElement.classList.add('marquee')}
 })();
 </script>
 <script data-goatcounter="https://samuelj.goatcounter.com/count"
