@@ -565,11 +565,18 @@ a.shot-link:hover img{opacity:1;filter:brightness(1.06);border-color:rgba(167,13
   .listening-like{min-height:40px;padding:6px 12px}
 }
 
-/* Footer on phones: icons on their own row, the line stays on one line */
+/* Footer on phones: icons on their own row. The credit stays on one line
+   when it fits; on very narrow screens the date drops under it, no mid-line wrap. */
+.foot-note{margin:0}
+.foot-dot{white-space:pre}
 @media (max-width:720px){
   .foot{flex-direction:column-reverse;align-items:flex-start;gap:14px;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
-  .foot>span{font-size:13px;white-space:nowrap}
+  .foot-note{font-size:13px;max-width:100%;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:0;row-gap:2px}
   .foot-social{gap:8px}
+}
+@media (max-width:360px){
+  .foot-dot{display:none}
+  .foot-note{flex-direction:column;align-items:flex-start;gap:2px}
 }
 
 /* Anchors under the sticky nav */
