@@ -111,7 +111,20 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 .skills dt{font-weight:600;font-size:15px}
 .skills dd{color:var(--muted);font-size:14px;line-height:1.45;margin-top:2px}
 .listening{grid-column:1/-1;max-width:520px}
-.listening .eyebrow{margin-bottom:14px}
+.listening-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.listening .eyebrow{margin:0}
+.listening-like{display:inline-flex;align-items:center;gap:6px;margin:0;padding:4px 2px 4px 8px;min-height:32px;border:0;border-radius:8px;background:transparent;color:var(--faint);cursor:pointer;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;line-height:1}
+.listening-like:hover{color:var(--text)}
+.listening-like:focus{outline:none}
+.listening-like:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.listening-like-heart{width:16px;height:16px;display:block;flex:none}
+.listening-like-count{font-variant-numeric:tabular-nums}
+.listening-like-count:empty{display:none}
+.listening-like.is-liked{color:var(--accent);cursor:default}
+.listening-like.is-liked:hover{color:var(--accent)}
+.listening-like.is-liked .listening-like-heart path{fill:currentColor}
+.listening-like.just-liked .listening-like-heart{animation:like-pop .35s ease}
+@keyframes like-pop{0%{transform:scale(1)}40%{transform:scale(1.28)}100%{transform:scale(1)}}
 .listening iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;background:var(--surface)}
 @media (max-width:720px){
   .listening{max-width:none}
