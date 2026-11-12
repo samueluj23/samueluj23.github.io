@@ -1,12 +1,14 @@
+/* Geist has no naira sign (U+20A6). This 1 KB face holds only that glyph (Noto Sans subset, SIL OFL, see assets/fonts/OFL.txt). */
+@font-face{font-family:"Naira Sign";src:url("assets/fonts/naira-sign.woff2") format("woff2");font-weight:400 800;font-display:swap;unicode-range:U+20A6}
 :root{
   --bg:#09090b;--surface:#111114;--surface2:#17171c;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
-  --text:#fafafa;--muted:#a1a1aa;--faint:#8b8b96;--accent:#a78bfa;--brand:#7c3aed;
+  --text:#fafafa;--muted:#aaaab4;--faint:#9b9ba7;--accent:#a78bfa;--brand:#7c3aed;
   --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --radius:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:Geist,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
+body{font-family:Geist,"Naira Sign",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
 a{color:inherit}
 img{max-width:100%;display:block}
 button{font:inherit;cursor:pointer}
@@ -128,7 +130,7 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 .listening iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;background:var(--surface)}
 @media (max-width:720px){
   .listening{max-width:none}
-  .listening iframe{height:352px}
+  .listening iframe{height:432px}
 }
 
 /* experience */
@@ -494,3 +496,81 @@ a.shot-link img{transition:border-color .2s,opacity .2s}
 a.shot-link:hover img{border-color:var(--line2);opacity:.92}
 a.shot-link:focus{outline:none}
 a.shot-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ===== v4 polish: logo strip, card balance, contrast, listening, footer ===== */
+::selection{background:rgba(167,139,250,.34);color:#fff}
+html{scrollbar-color:#2c2b36 var(--bg);accent-color:var(--accent)}
+.m-co{font-family:Geist,"Naira Sign",system-ui,sans-serif}
+
+/* Logo strip on phones: the infinite marquee (masked viewport + translating
+   track) rendered as an empty band in mobile/WebKit compositing. Under 720px,
+   drop the marquee and show the names as wrapping pills; hide the aria-hidden clone. */
+@media (max-width:720px){
+  .logos,.marquee .logos{flex-direction:column;align-items:flex-start;gap:10px}
+  .marquee .logos-viewport{flex:none;width:100%;overflow:visible;-webkit-mask-image:none;mask-image:none}
+  .marquee .logos-track{display:block;width:auto;animation:none;transform:none}
+  .marquee .logos-track ul[aria-hidden="true"]{display:none}
+  .logos ul,.marquee .logos-track ul{flex-wrap:wrap;gap:6px;padding-right:0}
+  .logos li,.logos li:first-child,.marquee .logos-track li,.marquee .logos-track li:first-child{white-space:nowrap;border:1px solid var(--line2);border-radius:999px;padding:5px 11px;font-size:13px;line-height:1.2;color:var(--muted);background:rgba(255,255,255,.025)}
+}
+
+/* Dinner + Dyleum: share rows (subgrid) so title, copy, stats rule and links line up */
+@supports (grid-template-rows:subgrid){
+  @media (min-width:721px){
+    .cases{grid-auto-rows:auto;row-gap:16px}
+    .cases>.case{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:12px;align-content:start}
+    .cases>.case .stats{margin-top:4px;align-content:start}
+    .cases>.case .links{align-self:end}
+  }
+}
+.cases .case .stats{gap:12px 18px}
+
+/* Zerion dinner card uses the Zerion blue */
+.cases .sw2{box-shadow:0 0 0 3px rgba(59,130,246,.14)}
+.sw{box-shadow:0 0 0 3px rgba(255,255,255,.04)}
+.sw1{box-shadow:0 0 0 3px rgba(139,92,246,.16)}.sw2{box-shadow:0 0 0 3px rgba(59,130,246,.16)}.sw4{box-shadow:0 0 0 3px rgba(245,158,11,.14)}.sw5{box-shadow:0 0 0 3px rgba(244,63,94,.14)}
+
+/* Labels: a touch brighter and steadier on dark */
+.eyebrow,.fc-k,.par dt{letter-spacing:.09em}
+.case .stats span{color:var(--faint)}
+.logos li{color:#b8b8c1}
+
+/* Count-up: quieter while it runs */
+.counting{opacity:.88;transition:opacity .35s ease}
+
+/* Shots: brighten on hover instead of dimming */
+a.shot-link img{transition:border-color .2s ease,filter .2s ease}
+a.shot-link:hover img{opacity:1;filter:brightness(1.06);border-color:rgba(167,139,250,.4)}
+
+/* Listening: full-width card, taller embed so more of the playlist shows */
+.listening{grid-column:1/-1;max-width:none;padding:18px 18px 18px;border:1px solid var(--line);border-radius:var(--radius);
+  background:radial-gradient(60% 140% at 100% 0%,rgba(124,58,237,.16),transparent 60%),radial-gradient(40% 120% at 0% 100%,rgba(167,139,250,.06),transparent 70%),var(--surface)}
+.listening-head{margin-bottom:14px;padding:0 2px}
+.listening-title{display:inline-flex;align-items:center;gap:10px}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;width:14px;height:12px}
+.eq i{display:block;width:3px;height:100%;border-radius:1px;background:var(--accent);transform-origin:bottom;transform:scaleY(.45)}
+@media (prefers-reduced-motion:no-preference){
+  .eq i{animation:eq 1.1s ease-in-out infinite}
+  .eq i:nth-child(2){animation-delay:-.35s;animation-duration:.9s}
+  .eq i:nth-child(3){animation-delay:-.7s;animation-duration:1.25s}
+}
+@keyframes eq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.listening iframe{height:480px;border-radius:12px;background:#121212;box-shadow:0 20px 50px -30px rgba(0,0,0,.9)}
+.listening-like{padding:6px 8px;min-height:36px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02)}
+.listening-like:hover{border-color:var(--line2);background:rgba(255,255,255,.05)}
+.listening-like.is-liked{border-color:rgba(167,139,250,.35);background:rgba(124,58,237,.12)}
+@media (max-width:720px){
+  .listening{padding:14px}
+  .listening iframe{height:432px}
+  .listening-like{min-height:40px;padding:6px 12px}
+}
+
+/* Footer on phones: icons on their own row, the line stays on one line */
+@media (max-width:720px){
+  .foot{flex-direction:column-reverse;align-items:flex-start;gap:14px;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+  .foot>span{font-size:13px;white-space:nowrap}
+  .foot-social{gap:8px}
+}
+
+/* Anchors under the sticky nav */
+section[id],article[id]{scroll-margin-top:76px}
