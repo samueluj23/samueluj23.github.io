@@ -16,11 +16,9 @@
 
 ## Work
 
-- rigitiX (2025 – now): Co-founder, Marketing & Growth. Africa's event OS for ticketing, door, promoters and settlement. Took it from about 3k organic users in one city to 5 cities, 186+ events, 49,028+ tickets and 9-figure ₦ GMV, with no paid acquisition. ~78% year-over-year growth, a ~90% win rate on proposals and offers, and 7.7K+ monthly active users (Aug 2026). Set the positioning and GTM, built a sales network of creators who sell tickets, and brought in B2B work with corporates, universities, event organizers, businesses and partners. Led the rebrand launch, when "rigitiX by CodeRigi" became rigitiX with a new look. https://rigitix.com · rebrand: https://x.com/rigitix/status/2015772869599334553 · blog: https://blog.rigitix.com
+- rigitiX (2025 – now): Co-founder, Marketing & Growth. Africa's event OS for ticketing, door, promoters and settlement. Took it from about 3k organic users in one city to 5 cities, 186+ events, 49,028+ tickets and 9-figure ₦ GMV, with no paid acquisition. ~78% year-over-year growth, a ~90% win rate on proposals and offers, and 7.7K+ monthly active users (Aug 2026). Set the positioning and GTM, built a sales network of creators who sell tickets, and brought in B2B work with corporates, event organizers and partners. Led the rebrand launch, when "rigitiX by CodeRigi" became rigitiX with a new look. https://rigitix.com. Rebrand: https://x.com/rigitix/status/2015772869599334553. Blog: https://blog.rigitix.com
 
-- Zerion (Dec 2024 – now): Ambassador & Nigeria Growth Lead. Self-custodial crypto wallet. Launched and ran the official @zerionNG account, translating product updates for African users; posted daily education, onboarding and campaign content; ran 10+ quests and bounties and 3+ X Spaces; led the Zero Nigeria → Zerion Nigeria rename. Zerion Nigeria users grew from 17,067 to 30,367 between Dec 2024 and Mar 2025, about 78% in 3 months, all organic. 2,600+ posts on @zerionNG and 1,000+ community members. https://x.com/zerionNG · rename: https://x.com/zerionNG/status/1889740948655186103 · top post, ~27k impressions: https://x.com/zerionng/status/1912814443076944144
-
-- Zerion's Self-Custodial Dinner (Mar 2025): hosted 30+ Nigerian Web3 KOLs and builders, including leaders from Web3 Nigeria and TGIB, for a dinner on self-custody. The recap had 11k+ views and was featured by @zerion. Recap: https://x.com/zerionNG/status/1905589193012593073 · feature: https://x.com/zerion/status/1905649473793261583
+- Zerion (Dec 2024 – now): Ambassador & Nigeria Growth Lead. Self-custodial crypto wallet. Launched and ran the official @zerionNG account, translating product updates for African users; posted daily education, onboarding and campaign content; ran 10+ quests and bounties and 3+ X Spaces; led the Zero Nigeria → Zerion Nigeria rename. Zerion Nigeria users grew from 17,067 to 30,367 between Dec 2024 and Mar 2025, about 78% in 3 months, all organic. 2,600+ posts on @zerionNG and 1,000+ community members. https://x.com/zerionNG. Rename: https://x.com/zerionNG/status/1889740948655186103. Top post, ~27k impressions: https://x.com/zerionng/status/1912814443076944144. Hosted Zerion's Self-Custodial Dinner in Mar 2025 for 30+ Nigerian Web3 KOLs and builders, including leaders from Web3 Nigeria and TGIB. The recap had 11k+ views and was featured by @zerion: https://x.com/zerionNG/status/1905589193012593073. Feature: https://x.com/zerion/status/1905649473793261583.
 
 - GameGPT by Prism (Dec 2023 – Mar 2025): Community Manager, previously Moderator. AI game engine. Grew Telegram from 14k to 30k+ members through the $DUEL token launch and the Genesis NFT presale and auction (Jan 2025). Ran the welcome flow, campaign calendar, town halls, contests and weekly reporting, and connected Telegram, Discord and X.
 
@@ -28,7 +26,10 @@
 
 - Dyleum (Nov 2022 – Feb 2024): Chief Growth Officer. AI-powered P2P crypto exchange. Wrote the PRD, sourced the team and set GTM. Testnet launched in Jun 2023 on CoreDAO and Nautilus Chain. 30+ ecosystem partners, including Zebec, Shield Protocol, PoseiSwap and Coral Finance; 5-figure Zebec ecosystem funding; 100+ private beta testers. Whitepaper: https://dyleum.gitbook.io/whitepaper
 
-- Early career (2022 – 2023): Melody (ambassador, 2023): co-hosted an event with KuCoin Nigeria that drew 300+ people, and supported a sold-out NFT collection. Assure Wallet, now AsCoin (regional ambassador, 2022): 1,500+ app downloads from South-South Nigeria through local events and sessions in Port Harcourt. SynAssets (ambassador, 2022): rewrote the whitepaper and made educational content. Also moderated and ran campaigns for independent Telegram communities.
+- Early career (2022 – 2023):
+  - Melody (ambassador, 2023): co-hosted a KuCoin Nigeria event that drew 300+ people, and supported a sold-out NFT collection.
+  - Assure Wallet, now AsCoin (regional ambassador, 2022): 1,500+ app downloads from South-South Nigeria through events and sessions in Port Harcourt.
+  - SynAssets (ambassador, 2022): rewrote the whitepaper and made educational content, and moderated independent Telegram communities.
 
 ## Talks and writing
 

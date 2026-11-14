@@ -1,14 +1,15 @@
-/* Geist has no naira sign (U+20A6). This 1 KB face holds only that glyph (Noto Sans subset, SIL OFL, see assets/fonts/OFL.txt). */
-@font-face{font-family:"Naira Sign";src:url("assets/fonts/naira-sign.woff2") format("woff2");font-weight:400 800;font-display:swap;unicode-range:U+20A6}
+/* Geist has no naira sign (U+20A6). This 1 KB variable face holds only that glyph (Noto Sans subset, SIL OFL, see assets/fonts/OFL.txt). It comes first in --sans, with a tight unicode-range, so ₦ never falls through to Geist's missing glyph. */
+@font-face{font-family:"Naira Sign";src:url("assets/fonts/naira-sign.woff2") format("woff2-variations"),url("assets/fonts/naira-sign.woff2") format("woff2");font-weight:400 800;font-style:normal;font-display:block;unicode-range:U+20A6}
 :root{
   --bg:#09090b;--surface:#111114;--surface2:#17171c;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
   --text:#fafafa;--muted:#aaaab4;--faint:#9b9ba7;--accent:#a78bfa;--brand:#7c3aed;
+  --sans:"Naira Sign",Geist,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --radius:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:Geist,"Naira Sign",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
 a{color:inherit}
 img{max-width:100%;display:block}
 button{font:inherit;cursor:pointer}
@@ -137,11 +138,14 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 .exp{display:grid;grid-template-columns:1.55fr 1fr;gap:56px;align-items:start}
 .exp h2{margin-bottom:14px}
 .timeline{list-style:none;border-top:1px solid var(--line)}
-.timeline li{display:grid;grid-template-columns:136px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.timeline>li{display:grid;grid-template-columns:136px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
 .when{font-family:var(--mono);font-size:12.5px;color:var(--faint);padding-top:3px}
 .timeline h3{font-size:16px;font-weight:600;letter-spacing:-.01em}
 .timeline p{color:var(--muted);font-size:14.5px;margin-top:2px}
 .timeline p b{color:var(--text);font-weight:600}
+.early{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.early li{color:var(--muted);font-size:14.5px;line-height:1.45}
+.early b{color:var(--text);font-weight:600}
 .side{position:sticky;top:88px}
 .link-list{list-style:none;border-top:1px solid var(--line)}
 .link-list a{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s}
@@ -200,7 +204,7 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
   .case-feature .stats li:nth-child(2n){border-right:0!important}
   .case-feature .stats li:nth-last-child(-n+2){border-bottom:0!important}
   .skills dl{grid-template-columns:1fr}
-  .timeline li{grid-template-columns:1fr;gap:2px}
+  .timeline>li{grid-template-columns:1fr;gap:2px}
   .contact-card{padding:40px 20px}
   .contact-actions .btn{width:100%}
   .foot{flex-direction:column;gap:4px}
@@ -211,13 +215,13 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 .cases .case .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cases .case .stats.stats-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .case .stats b{white-space:nowrap}
-.timeline li{grid-template-columns:160px 1fr}
+.timeline>li{grid-template-columns:160px 1fr}
 .when{white-space:nowrap}
 @media (max-width:720px){
   .hero-photo img{width:56px;height:56px}
   .kicker{font-family:inherit;font-size:13px}
   .cases .case .stats.stats-4{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .timeline li{grid-template-columns:1fr}
+  .timeline>li{grid-template-columns:1fr}
 }
 
 /* ===== v3: identity, chips, icons, button system ===== */
@@ -281,7 +285,7 @@ h2{font-size:clamp(24px,2.6vw,30px);font-weight:650;letter-spacing:-.03em;line-h
 /* case meta */
 .meta{flex-wrap:wrap;gap:8px 0}
 .meta .sw{margin-right:10px}
-.m-co{font-family:Geist,system-ui,sans-serif;font-size:13.5px;font-weight:600;color:var(--text);padding-right:12px}
+.m-co{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--text);padding-right:12px}
 .m-role{padding:0 12px;border-left:1px solid var(--line2);line-height:1.1}
 .m-date{margin-left:auto;padding:3px 9px;border:1px solid var(--line);border-radius:999px;font-size:11.5px;line-height:1.2;white-space:nowrap}
 .links a{display:inline-flex;align-items:center}
@@ -373,7 +377,7 @@ main{overflow-x:clip}
 @supports not (overflow:clip){main{overflow-x:hidden}.side{position:static}}
 @media (max-width:1180px){.hero::before,.hero::after{left:0;right:0}}
 /* 2. Grid/flex children must be allowed to shrink below their content width. */
-.hero>*,.kpis>*,.cases>*,.case-feature>*,.about>*,.exp>*,.timeline li>*,.skills dl>*,.case .stats>*,.contact-actions>*,.contact-social>*{min-width:0}
+.hero>*,.kpis>*,.cases>*,.case-feature>*,.about>*,.exp>*,.timeline>li>*,.skills dl>*,.case .stats>*,.contact-actions>*,.contact-social>*{min-width:0}
 /* 3. Long strings (emails, handles, URLs) wrap instead of pushing width. */
 .case p,.timeline p,.about-copy p,.link-list b,.kpi span,.case .stats span,.skills dd{overflow-wrap:anywhere}
 .contact-actions .btn-primary span{min-width:0;overflow:hidden;text-overflow:ellipsis}
@@ -500,7 +504,7 @@ a.shot-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 /* ===== v4 polish: logo strip, card balance, contrast, listening, footer ===== */
 ::selection{background:rgba(167,139,250,.34);color:#fff}
 html{scrollbar-color:#2c2b36 var(--bg);accent-color:var(--accent)}
-.m-co{font-family:Geist,"Naira Sign",system-ui,sans-serif}
+.m-co{font-family:var(--sans)}
 
 /* Logo strip on phones: the infinite marquee (masked viewport + translating
    track) rendered as an empty band in mobile/WebKit compositing. Under 720px,
@@ -565,18 +569,12 @@ a.shot-link:hover img{opacity:1;filter:brightness(1.06);border-color:rgba(167,13
   .listening-like{min-height:40px;padding:6px 12px}
 }
 
-/* Footer on phones: icons on their own row. The credit stays on one line
-   when it fits; on very narrow screens the date drops under it, no mid-line wrap. */
+/* Footer on phones: icons on their own row, credit wraps as one sentence. */
 .foot-note{margin:0}
-.foot-dot{white-space:pre}
 @media (max-width:720px){
   .foot{flex-direction:column-reverse;align-items:flex-start;gap:14px;padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
-  .foot-note{font-size:13px;max-width:100%;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:0;row-gap:2px}
+  .foot-note{font-size:13px;max-width:100%}
   .foot-social{gap:8px}
-}
-@media (max-width:360px){
-  .foot-dot{display:none}
-  .foot-note{flex-direction:column;align-items:flex-start;gap:2px}
 }
 
 /* Anchors under the sticky nav */
